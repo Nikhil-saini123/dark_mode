@@ -1,0 +1,71 @@
+body
+{
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+	align-items: center;
+	transition: .9s;
+
+}
+.input
+{
+	visibility: hidden;
+
+}
+.label:hover
+{
+	box-shadow: yellowgreen 3px 3px;
+	background: linear-gradient( lawngreen 5px 6px );
+    border-color: lightgray 4px 3px;
+}
+.label
+{
+	position: absolute;
+	width: 80px;
+	height: 40px;
+	background-color: lightgray;
+	border-radius: 20px;
+	cursor: pointer;
+
+}
+.circle
+{
+	width: 34px;
+	background-color: whitesmoke;
+	height: 34px;
+	border-radius: 50%;
+	top: 3px;
+	position: absolute;
+	left: 3px;
+	animation: toggleof 0.4 linear forwards;
+}
+.input:checked+ .label
+{
+	background-color: salmon;
+}
+
+.input:checked + .label .circle
+{
+	animation: toggleon 0.4 linear forwards;
+}
+
+@keyframes toggleon{
+0%{
+	transform: translate(0);
+}
+100%
+{
+	transform: translate(90px);
+}
+}
+
+@keyframes toggleoff{
+0%{
+	transform: translate(90px);
+}
+100%
+{
+	transform: translate(0);
+}
+}
